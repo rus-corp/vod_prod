@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="content">
+    <div class="catalog_content">
+        <div class="catalog_content__main_category">
+            {% for main_category in main_categories %}
+            <a href="{% url 'product:main_categories' main_category.slug %}">{{main_category.name}}</a>
+            {% endfor %}
+        </div>
+
+
+        <div class="catalog_main_section">
+            <aside class="catalog_content__categories">
+                <nav class="category_bar">
+                    {% for category in categories %}
+                    <a class="side-bar__link" href="{% url 'product:categories' main_category_slug category.slug %}">{{category.name}}</a>
+                    {% endfor %}
+                </nav>
+            </aside>
+
+
+            <section>
+                <div class="catalog_content__products">
+                    {% for product in products %}
+                    <div class="catalog_content__products product">
+                        <a class="products__item" href="">
+                            <img class="products__image" src="{{product.photo.url}}" alt="">
+                            <p class="products__name">{{product.name}}</p>
+                        </a>
+                        
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

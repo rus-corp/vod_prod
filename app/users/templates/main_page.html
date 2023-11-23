@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="content">
+	<!-- trianglify pattern container -->
+	<div class="pattern pattern--hidden"></div>
+	<!-- cards -->
+	<div class="wrapper">
+		<div class="card">
+			<div class="card__container card__container--closed">
+				<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+					<defs>
+						<clipPath id="clipPath1">
+							<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+							<circle class="clip" cx="960" cy="250" r="992"></circle>
+						</clipPath>
+					</defs>
+					<image clip-path="url(#clipPath1)" width="1920" height="500" xlink:href="{% static 'img/main_page_img/catalog4.jpg' %}"></image>
+				</svg>
+				<div class="card__content">
+					<i class="card__btn-close fa fa-times"></i>
+					<div class="card__caption">
+						<h2 class="card__title">Каталог</h2>
+						<p class="card__subtitle">Здесь вы найдете все наши предложения</p>
+					</div>
+					<div class="card__copy">
+						<p>Добро пожаловать в наш каталог. Здесь вы найдете разнообразные продукты высокого качества, которые удовлетворят ваши потребности и предпочтения.</p>
+						{% for product in latest_products %}
+						<p>{{product.name}} - {{product.desc}}</p>
+						<img class="main_page_product_image" src="{{product.photo.url}}" alt="">
+						{% endfor %}
+						<p>Посмотреть весь каталог: <a href="{% url 'product:main_category' %}">здесь</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card__container card__container--closed">
+				<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+					<defs>
+						<clipPath id="clipPath2">
+							<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+							<circle class="clip" cx="960" cy="250" r="992"></circle>
+						</clipPath>
+					</defs>
+					<image clip-path="url(#clipPath2)" width="1920" height="500" xlink:href="{% static 'img/main_page_img/special4.jpg' %}"></image>
+				</svg>
+				<div class="card__content">
+					<i class="card__btn-close fa fa-times"></i>
+					<div class="card__caption">
+						<h2 class="card__title">Спецпредложения</h2>
+						<p class="card__subtitle">Лучшее что может предложить рынок</p>
+					</div>
+					<div class="card__copy">
+						<div class="meta">
+							<img class="meta__avatar" src="" alt="author02" />
+							<span class="meta__author">Frank Posterius</span>
+							<span class="meta__date">06/16/2015</span>
+						</div>
+						<p>Business model canvas bootstrapping deployment startup. In A/B testing pivot niche market alpha conversion startup down monetization partnership business-to-consumer success for investor mass market business-to-business.</p>
+						<p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
+						<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+						<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+						<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
+						<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card__container card__container--closed">
+				<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+					<defs>
+						<clipPath id="clipPath3">
+							<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+							<circle class="clip" cx="960" cy="250" r="992"></circle>
+						</clipPath>
+					</defs>
+					<image clip-path="url(#clipPath3)" width="1920" height="500" xlink:href="{% static 'img/main_page_img/company.jpg' %}"></image>
+				</svg>
+				<div class="card__content">
+					<i class="card__btn-close fa fa-times"></i>
+					<div class="card__caption">
+						<h2 class="card__title">Все о нас</h2>
+						<p class="card__subtitle">Ответим на вопрос кто мы и зачем это делаем</p>
+					</div>
+					<div class="card__copy">
+						<p>Мы — команда профессионалов, преданная созданию качественной продукции. Наша миссия - удовлетворить потребности клиентов, предоставляя надежные решения, воплощая инновации и стремясь к высшим стандартам качества.</p>
+						<p>Наши корни уходят в глубь инженерной сантехники, и наша страсть к этой отрасли привела нас к созданию собственного магазина. Мы - команда, состоящая из экспертов, обладающих богатым опытом и знанием в области инженерной сантехники. Наша миссия - предоставить клиентам доступ к широкому ассортименту продукции высокого качества.</p>
+						<p>Мы гордимся тем, что предлагаем продукты, которые соответствуют самым строгим стандартам и требованиям безопасности. Наш ассортимент включает в себя современные решения для отопления, водоснабжения, канализации и других инженерных систем. Мы готовы помочь вам выбрать наилучшие решения для вашего проекта, предоставить экспертные консультации и гарантировать надежное обслуживание.</p>
+						<p>Мы с гордостью основали нашу компанию, ставя перед собой целью предложить клиентам не только продукты высшего качества, но и опыт обслуживания, который превзойдет их ожидания. Наша команда специалистов готова ответить на ваши вопросы, помочь в выборе оптимальных решений, и обеспечить быструю доставку товаров. Мы понимаем важность вашего времени и ресурсов, и мы стремимся сделать ваше сотрудничество с нами максимально удобным и выгодным.</p>
+						<p>Мы не просто продавцы, мы ваш надежный партнер. Мы уделяем особое внимание инновациям и развитию наших компетенций, чтобы оставаться на переднем крае в индустрии инженерной сантехники. Наша компания стремится к долгосрочным отношениям с клиентами, где ваш успех - наш успех.</p>
+						<p>Сотрудничая с нами, вы получаете доступ к инновационным технологиям и надежным партнерам. Наша цель - удовлетворить потребности клиентов, предоставляя надежные решения в мире инженерной сантехники. Спасибо, что выбрали нас!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card__container card__container--closed">
+				<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+					<defs>
+						<clipPath id="clipPath4">
+							<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+							<circle class="clip" cx="960" cy="250" r="992"></circle>
+						</clipPath>
+					</defs>
+					<image clip-path="url(#clipPath4)" width="1920" height="500" xlink:href="{% static 'img/main_page_img/partners4.jpg' %}"></image>
+				</svg>
+				<div class="card__content">
+					<i class="card__btn-close fa fa-times"></i>
+					<div class="card__caption">
+						<h2 class="card__title">Наши партнеры</h2>
+						<p class="card__subtitle">Компании которые помогают нам в нашем деле</p>
+					</div>
+					<div class="card__copy">
+						<p>Наши партнеры — ключевая часть нашего успеха. Мы гордимся сотрудничеством с надежными компаниями, разделяющими наши ценности и стремление к качеству.</p>
+						{% for partner in partners %}
+							<img class="partners_logo" src="{{partner.logo.url}}" alt="">
+							<p>{{partner.name}} {{partner.desc}}</p>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card__container card__container--closed">
+				<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+					<defs>
+						<clipPath id="clipPath5">
+							<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+							<circle class="clip" cx="960" cy="250" r="992"></circle>
+						</clipPath>
+					</defs>
+					<image clip-path="url(#clipPath5)" width="1920" height="500" xlink:href="{% static 'img/main_page_img/projects.jpg' %}"></image>
+				</svg>
+				<div class="card__content">
+					<i class="card__btn-close fa fa-times"></i>
+					<div class="card__caption">
+						<h2 class="card__title">Наши проекты</h2>
+						<p class="card__subtitle">Люди, которые уже стали нашими клиентами</p>
+					</div>
+					<div class="card__copy">
+						<p>Наши клиенты - наша гордость. Мы стремимся удовлетворить потребности каждого, предоставляя качественные продукты и превосходное обслуживание. Их успех - наша цель.</p>
+						{% for client in clients %}
+						<img class="client_photo" src="{{client.photo.url}}" alt="">
+						<p>{{client.name}} {{client.desc}}</p>
+						{% endfor %}
+						<!-- <p>Release creative social proof influencer iPad crowdsource gamification learning curve network effects monetization. Gamification business plan mass market www.discoverartisans.com direct mailing ecosystem seed round sales long tail vesting period.</p>
+						<p>Product management ramen bootstrapping seed round venture holy grail technology backing partner network entrepreneur beta marketing value proposition. Android stealth conversion scrum project network effects. Creative alpha long tail conversion stealth growth hacking iteration investor A/B testing prototype customer. Startup www.discoverartisans.com direct mailing launch party partnership market ramen metrics focus value proposition.</p>
+						<p>Stock infrastructure seed round sales paradigm shift technology user experience focus gamification. Partnership metrics business plan stealth business-to-business. Deployment graphical user interface monetization. Twitter incubator scrum project entrepreneur branding burn rate ramen backing paradigm shift virality crowdsource.</p>
+						<p>Social proof MVP ecosystem. Ramen launch party pitch deployment stealth. Vesting period MVP equity. Focus creative partnership founders iteration agile development infographic.</p>
+						<p>Low hanging fruit burn rate innovator user experience niche market A/B testing creative launch party product management release. Www.discoverartisans.com influencer business model canvas user experience gamification paradigm shift startup research &amp; development iPad agile development. Strategy incubator infographic success marketing buzz A/B testing responsive web design. Traction research &amp; development pitch seed money venture niche market accelerator network effects.</p> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card__container card__container--closed">
+				<svg class="card__image" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 500" preserveAspectRatio="xMidYMid slice">
+					<defs>
+						<clipPath id="clipPath6">
+							<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+							<circle class="clip" cx="960" cy="250" r="992"></circle>
+						</clipPath>
+					</defs>
+					<image clip-path="url(#clipPath6)" width="1920" height="500" xlink:href="{% static 'img/main_page_img/conatcts5.jpg' %}"></image>
+				</svg>
+				<div class="card__content">
+					<i class="card__btn-close fa fa-times"></i>
+					<div class="card__caption">
+						<h2 class="card__title">Наши контакты</h2>
+						<p class="card__subtitle">Здесь Вы всегда можете найти нас</p>
+					</div>
+					<div class="card__copy">
+						<p>Свяжитесь с нами! Мы всегда готовы ответить на ваши вопросы, предоставить информацию и поддержать ваши проекты. Наши контакты - ваше окно в мир наших услуг.</p>
+						<p>Мы находимся по адресу: г. Шымкент улица Сайрамская 85/1 </p>
+						<p>Телефон: +7 777 666 55 44</p>
+						<p>Работаем с понедельника по субботу с 9.00</p>
+						<p>Наш <a href="">инстаграм</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /cards -->
+</div><!-- /content -->
+<!-- Related demos -->
+{% endblock %}
